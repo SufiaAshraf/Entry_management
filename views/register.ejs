@@ -1,0 +1,32 @@
+
+<%- include ('partials/landingheader') %>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Welcome New Host </h1>
+        <div style="width:30%; margin: 25px auto;" >
+            <form action="/register" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username" class="required">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Email"class="required" >
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tel" name="phone" placeholder="phone" class="required"> 
+                </div>
+                <div class="form-group"> 
+                        <input class="form-control" type="text" name="address" placeholder="Check-In Address to be handled" class="required"> 
+                </div>
+                <div  class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password" class="required">
+                </div>
+                
+                <button class="btn btn-lg btn-success">Signup</button>
+            </form>
+            <a href="/visitors">Go Back</a>
+        </div>
+       
+    </div>    
+</div>
+<%- include ('partials/footer') %>

@@ -1,0 +1,31 @@
+<%- include ('partials/header') %>
+
+<div class="container">
+<header>
+	<div class="container" style="text-align: center"; width:30%; margin: 25px auto;  class="page-header">
+		<h1>Welcome to Innovaccer</h1>
+		<small><p>These are your currently checked-in visitors</p></small>
+		<p>
+			<a class="btn btn-primary btn-large" href="/visitors/new">Add new visitor</a>
+		</p>
+	</div>
+</header>
+
+<div class="row text-center" style="display: flex; flex-wrap: wrap;text-align: center;">
+		<% visitors.forEach(function(visitor){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail" >
+						<h3> <strong>Name:</strong> <%=visitor.name%> </h3>
+						<h5> <strong>Email:</strong> <%=visitor.email%> </h5>
+						<h5> <strong>Phone:</strong> <%=visitor.phone%> </h5>
+						<h5> <strong>Check-In Time: </strong>  <%= visitor.checkIn %></h5>
+							<div class="caption">
+								<a href="/visitors/<%=visitor._id%>" class="btn btn-info">Checkout</a>
+						</div>
+				</div>	
+			</div>
+		<% }); %>
+		</div>
+</div>
+
+<%- include ('partials/footer') %>
