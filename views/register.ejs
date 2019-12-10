@@ -1,32 +1,52 @@
 
 <%- include ('partials/landingheader') %>
 
-<div class="container">
-    <div class="row">
-        <h1 style="text-align: center">Welcome New Host </h1>
-        <div style="width:30%; margin: 25px auto;" >
-            <form action="/register" method="POST">
-                <div class="form-group">
-                    <input class="form-control" type="text" name="username" placeholder="username" class="required">
+
+    <!-- Sign up form fro new host-->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form action="/register" method="POST" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" placeholder="username" class="required" id="name" placeholder="Your userame"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email" class="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="zmdi zmdi-phone"></i></label>
+                            <input type="tel" name="phone" id="email" placeholder="Your Contact No." class="required"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address"><i class="zmdi zmdi-gps-dot"></i></label>
+                            <input type="text" name="address" id="email" placeholder="Check-In Address to be handled" class="required"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="pass" placeholder="Password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input class="form-control" type="email" name="email" placeholder="Email"class="required" >
+                <div class="signup-image">
+                    <figure><img src="/stylesheets/assets/images/signup-image.jpg" alt="sing up image"></figure>
                 </div>
-                <div class="form-group">
-                    <input class="form-control" type="tel" name="phone" placeholder="phone" class="required"> 
-                </div>
-                <div class="form-group"> 
-                        <input class="form-control" type="text" name="address" placeholder="Check-In Address to be handled" class="required"> 
-                </div>
-                <div  class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="password" class="required">
-                </div>
-                
-                <button class="btn btn-lg btn-success">Signup</button>
-            </form>
-            <a href="/visitors">Go Back</a>
+            </div>
         </div>
-       
-    </div>    
-</div>
+    </section>
+<script src="/stylesheets/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/stylesheets/js/main.js"></script>
+
 <%- include ('partials/footer') %>

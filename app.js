@@ -8,18 +8,17 @@ var express    = require("express"),
 	visitor    =require("./models/visitors"),
 	feedback   = require("./models/feedback"),
 	User       = require("./models/user"),
-	// seedDB     = require("./seed"),
 	path       = require("path"),
 	session    = require("express-session"),
     nodemailer = require("nodemailer"),
 	visitorsRoutes = require("./routes/visitors"),
 	indexRoutes     = require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/Entry_management", {useNewUrlParser: true, useUnifiedTopology: true}, );
+mongoose.connect("mongodb://localhost:27017/Entry_management", {useNewUrlParser: true, useUnifiedTopology: true , useFindAndModify: false});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine" , "ejs");
 app.use(methodOverride("_mehtod"));
-
+app.use(express.static(__dirname + '/public'));
 // PASSPORT CONFIGURATION
 app.use(session({
 	secret : "Jawwad just brags about himself.He's not a genius",

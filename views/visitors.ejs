@@ -1,31 +1,57 @@
-<%- include ('partials/header') %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entry Mangement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<div class="container">
-<header>
-	<div class="container" style="text-align: center"; width:30%; margin: 25px auto;  class="page-header">
-		<h1>Welcome to Innovaccer</h1>
-		<small><p>These are your currently checked-in visitors</p></small>
-		<p>
-			<a class="btn btn-primary btn-large" href="/visitors/new">Add new visitor</a>
-		</p>
-	</div>
-</header>
-
-<div class="row text-center" style="display: flex; flex-wrap: wrap;text-align: center;">
-		<% visitors.forEach(function(visitor){ %>
-			<div class="col-md-3 col-sm-6">
-				<div class="thumbnail" >
-						<h3> <strong>Name:</strong> <%=visitor.name%> </h3>
-						<h5> <strong>Email:</strong> <%=visitor.email%> </h5>
-						<h5> <strong>Phone:</strong> <%=visitor.phone%> </h5>
-						<h5> <strong>Check-In Time: </strong>  <%= visitor.checkIn %></h5>
-							<div class="caption">
-								<a href="/visitors/<%=visitor._id%>" class="btn btn-info">Checkout</a>
-						</div>
-				</div>	
-			</div>
-		<% }); %>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/assets/visitor.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="myvisitor"> 
+		<nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/"><img src="https://www.innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg" ></a>
+					</div>
+				   
+					<div class="collapse navbar-collapse">      
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="https://www.innovaccer.com/about-us/"><i class="zmdi zmdi-accounts-alt"></i>About Us</a></li>
+							<li><a href="https://www.innovaccer.com/blogs/"><i class="zmdi zmdi-bookmark"></i>Blogs</a></li>
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		
+	<header>
+		<div  style="text-align: center"; width:30%; margin: 25px auto;  class="page-header">
+			<h1>Welcome to Innovaccer</h1>
+			<small><p>These are all currently checked-in visitors</p></small>
+			<p>
+				<a class="btn btn-primary btn-large" href="/visitors/new">Add new visitor</a>
+			</p>
 		</div>
+	</header>
+	<br>
+<div >
+<div class="row text-center" style="display: flex; flex-wrap: wrap;text-align: center;">
+	<% visitors.forEach(function(visitor){ %>
+		<div  class="col-md-3 col-sm-6">
+			<div class="container" class="thumbnail" style="text-align: center;" >
+				<h5 style="text-align: left;"> <strong>Name:</strong> <%=visitor.name%> </h5>
+				<h5 style="text-align: left;"> <strong>Email:</strong> <%=visitor.email%> </h5>
+				<h5 style="text-align: left;"> <strong>Phone:</strong> <%=visitor.phone%> </h5>
+				<h5 style="text-align: left;"> <strong>Check-In Time: </strong>  <%= visitor.checkIn %></h5>
+					<div class="caption" style="text-align: left;">
+						<a href="/visitors/<%=visitor._id%>" class="btn btn-info">Checkout</a>
+					</div>
+			</div>	
+		</div>
+	<% }); %>
+	</div>
 </div>
 
 <%- include ('partials/footer') %>

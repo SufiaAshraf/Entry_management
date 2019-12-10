@@ -1,16 +1,22 @@
 <%- include ('partials/header') %>
-
     <div class="container">
             <div class="row">
                 <h1 >
-                    <div style="text-align: center" class="jumbotron" >
+                    <div>
                         <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZN9jwa6TUYBDNBsvUNCCMmqdRuoyB3Cy176TaD8JzWIwA0C9eOg&s"> -->
                             <h2>Have a nice day <%=visitor.name %>!!!</h2>
+                           
                             <h3>Thanks for choosing <strong> Innovaccer </strong>,the data activation platform to right the wrongs of healthcare technology.</h3> 
-                            <form action="/visitors/<%=visitor._id%>?_method=DELETE" method="POST">
-                                <button class="btn btn-danger">Checkout</button>
-                            </form>
+                            <br>
+                            <div class="form-group">
+                                    <form action="/visitors/<%=visitor._id%>?_method=DELETE" method="POST">
+                                        <!-- <input  class="btn" class="form-control" type="submit" name="Checkout" value="Checkout"> -->
+                                        <button class="btn btn-danger">Checkout</button>
+                                    </form>
+                            </div>
+                            
                     </div> 
                 </h1>       
         </div>
 <%- include ('partials/footer') %>
+
