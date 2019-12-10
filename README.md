@@ -4,6 +4,11 @@ A webapp used to manage the Incoming and Outgoing of Guests at a hotel, office o
 *Nodemailer module is used for scheduling of mails.*
 *Nexmo API is used for scheduling SMS.*
 
+# Run
+* Clone the repo
+* run node app.js
+* visit http://localhost:3000/visitors
+
 # Built-with
 * [Node-js](https://nodejs.org/en/docs/)  - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [Npm](https://docs.npmjs.com/)  -   Npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
