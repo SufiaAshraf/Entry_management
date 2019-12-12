@@ -1,6 +1,6 @@
 # Entry Management WebApp
 A webapp used to manage the Incoming and Outgoing of Guests at a hotel, office or such place. The host is notified when a visitor checks in through Email and SMS with the details. The visitor is notified when he/she checks out Email.Through this webApp it is possible to handle all visitors related to a single host at a time.
-It is a secure app to handle meetings to any host.
+It is a secure app to handle meetings with any host.
 *User authentication is used for hosts.*
 *Nodemailer module is used for scheduling of mails.*
 *Nexmo API is used for scheduling SMS.*
